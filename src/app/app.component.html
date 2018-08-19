@@ -13,6 +13,16 @@
       <hr>
       <app-success-alert></app-success-alert>
 
+      <hr>
+
+    <button class="btn btn-primary" (click)="createLog()">Dispaly Detail</button>
+      <p *ngIf="showingParagraph; else hiddenParagraph">Showing the paragraph</p>
+      <ng-template #hiddenParagraph>
+        <p>Hidden the paragraph</p>
+      </ng-template>
+
+<p *ngFor="let log of logs; index as i" [ngStyle]="{backgroundColor: i>=4? 'blue': ''}" [ngClass]="{'textColor': i>=4}">{{log}}</p>
+
     </div>
   </div>
 </div>

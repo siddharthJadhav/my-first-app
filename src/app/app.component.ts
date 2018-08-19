@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   userName = 'sid';
+  showingParagraph = false;
+  logs: number[] = [];
+  index = 0;
+
+  createLog() {
+    this.showingParagraph = !this.showingParagraph;
+    this.index++ ;
+    this.logs.push(this.index);
+  }
+
 }
