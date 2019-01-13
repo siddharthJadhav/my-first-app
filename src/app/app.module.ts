@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { WarnningAlertComponent } from './components/warnning-alert/warnning-alert.component';
 import { SuccessAlertComponent } from './components/success-alert/success-alert.component';
 import { BasicDirective } from './directive/basic-directive/basic-directive.directive';
+import { BetterDirective } from './directive/better-directive/better-directive.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     WarnningAlertComponent,
     SuccessAlertComponent,
-    BasicDirective
+    BasicDirective,
+    BetterDirective
   ],
   imports: [
     BrowserModule,
