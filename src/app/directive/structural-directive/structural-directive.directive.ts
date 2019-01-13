@@ -3,7 +3,7 @@ import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
 @Directive({
   selector: '[appUnless]'
 })
-export class AppUnlessDirective{
+export class AppUnlessDirective {
   @Input('appUnless') set unless(condition: boolean) {
     console.log('condition : ', condition);
     if (!condition) {

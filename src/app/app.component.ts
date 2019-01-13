@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
   logs: number[] = [];
   index = 0;
   hideUnlessDirective = true;
+  switchValue = 10;
 
   createLog() {
     this.showingParagraph = !this.showingParagraph;

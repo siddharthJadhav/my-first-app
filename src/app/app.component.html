@@ -1,31 +1,37 @@
 <div class="container">
 
-<p appBasicHeilightDirective>Basic directive</p>
-<p appBetterDirective default="green" heightLight="yellow">App Better Directive</p>
-<p *appUnless="hideUnlessDirective">This is structural Directive</p>
+  <p appBasicHeilightDirective>Basic directive</p>
+  <p appBetterDirective default="green" heightLight="yellow">App Better Directive</p>
+  <p *appUnless="hideUnlessDirective">This is structural Directive</p>
+  <div [ngSwitch]="switchValue">
+    <p *ngSwitchCase="5">The value is 5</p>
+    <p *ngSwitchCase="10">The value is 10</p>
+    <p *ngSwitchCase="100">The value is 100</p>
+    <p *ngSwitchDefault>Theis is default value</p>
+  </div>
 
   <div class="row">
     <div class="col-xs-12">
       <input type="text" style="margin-top: 20px" class="form-control" [(ngModel)]="userName">
       <p>UserName is : {{userName}}</p>
-      
+
       <button class="btn btn-primary" [disabled]="userName.length === 0" (click)="userName = ''">Reset UserName</button>
 
       <hr>
-      
+
       <app-warnning-alert></app-warnning-alert>
       <hr>
       <app-success-alert></app-success-alert>
 
       <hr>
 
-    <button class="btn btn-primary" (click)="createLog()">Dispaly Detail</button>
+      <button class="btn btn-primary" (click)="createLog()">Dispaly Detail</button>
       <p *ngIf="showingParagraph; else hiddenParagraph">Showing the paragraph</p>
       <ng-template #hiddenParagraph>
         <p>Hidden the paragraph</p>
       </ng-template>
 
-<p *ngFor="let log of logs; index as i" [ngStyle]="{backgroundColor: i>=4? 'blue': ''}" [ngClass]="{'textColor': i>=4}">{{log}}</p>
+      <p *ngFor="let log of logs; index as i" [ngStyle]="{backgroundColor: i>=4? 'blue': ''}" [ngClass]="{'textColor': i>=4}">{{log}}</p>
 
     </div>
   </div>
