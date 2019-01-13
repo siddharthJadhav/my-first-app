@@ -7,6 +7,7 @@ import { WarnningAlertComponent } from './components/warnning-alert/warnning-ale
 import { SuccessAlertComponent } from './components/success-alert/success-alert.component';
 import { BasicDirective } from './directive/basic-directive/basic-directive.directive';
 import { BetterDirective } from './directive/better-directive/better-directive.directive';
+import { AppUnlessDirective } from './directive/structural-directive/structural-directive.directive';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { BetterDirective } from './directive/better-directive/better-directive.d
     WarnningAlertComponent,
     SuccessAlertComponent,
     BasicDirective,
-    BetterDirective
+    BetterDirective,
+    AppUnlessDirective
   ],
   imports: [
     BrowserModule,
