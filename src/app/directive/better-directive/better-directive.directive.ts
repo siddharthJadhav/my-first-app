@@ -1,25 +1,27 @@
-import { Directive, ElementRef, Renderer2, OnInit, HostListener, HostBinding } from '@angular/core';
+import { Directive, ElementRef, Renderer2, OnInit, HostListener, HostBinding, Input } from '@angular/core';
 
 @Directive({
   selector: '[appBetterDirective]',
 })
 export class BetterDirective implements OnInit {
-
-  @HostBinding('style.background') bgColor = 'treansparent';
+  // tslint:disable-next-line:no-input-rename
+  @Input('default') defaultColor: string;
+  // tslint:disable-next-line:no-input-rename
+  @Input('heightLight') heightLightColor: string;
+  @HostBinding('style.background') bgColor: string;
 
   @HostListener('mouseenter') mouseEnter() {
-    console.log('event Data: ');
-    this.bgColor = 'blue';
+    this.bgColor = this.heightLightColor;
   }
 
   @HostListener('mouseleave') mouseLeave() {
-    this.bgColor = 'transparent';
+    this.bgColor = this.defaultColor;
   }
 
   constructor(private renderer: Renderer2, private elementRef: ElementRef) {}
 
   ngOnInit() {
-    // this.renderer.setStyle(this.elementRef.nativeElement, 'backgroundColor', 'blue');
+    this.bgColor = this.defaultColor;
   }
 
 }
